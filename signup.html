@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="singup.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @media only screen and (max-width: 768px) {
+  .column 
+  {
+    position : relative;
+    margin-top : 120px;
+    width : 100%;
+  }
+  .flexColumn{
+    width : 100%;
+  }
+  .row{
+    flex-direction : column;
+  }
+}
+</style>
+<script>
+            function validateForm() {
+                    var x = document.forms["myForm"]["name"].value;
+                    if (x == "") {
+                            alert("Please Enter Your Name");
+                     return false;
+                    }
+                    var a = document.forms["myForm"]["Email"].value;
+                    if (a == "") {
+                    
+                            alert("Please Enter Your Email");
+                     return false;
+                    }
+                     var c = document.forms["myForm"]["phone"].value;
+                    if (c == "") {
+                    
+                            alert("Please Re-enter Your Mobile Number");
+                     return false;
+                    }
+                    
+                    var e = document.forms["myForm"]["confirm"].value;
+                    if (e == "") {
+                        alert("Please Re-enter Your Password");
+                     return false;
+                    }
+                    var p = document.forms["myForm"]["pass"].value;
+                    if (p == "") {
+                    
+                            alert("Please Enter Your Password");
+                     return false;
+                    }
+            }
+            function matchPassword(obj){
+                if(document.getElementById("password").value!=obj.value){
+                    console.log(obj.value,document.getElementById("password"));
+                    alert("password does not match");
+                }
+            }
+
+
+             function welcome()
+            {
+                alert(" Welcome to miniShop online shoping site please singup.");
+            }
+        </script>
+             
+</head>
+<body onload="welcome()">
+<center>
+  <span>
+    <h1>
+      <b><i><u>SIGN</u> <u>UP</u></i></b>
+    </h1>
+  </span>
+</center>
+<br>
+
+<div class="row">
+  <div class="flexColumn">
+    <div class="bgRow" style="background-color:red;">
+      <img src="mini.png">
+    </div>
+  </div>
+    <div class="column">
+            <form name="myForm" method="post" onsubmit="return validateForm()" >
+              <fieldset>
+                <center>
+                  <div class="form-row">
+                     <label for="name"><b>Name:</b></label>
+                       <input type="text" name="name" pattern="[A-Z][a-zA-Z][^#&<>\~;$^%{}?]{1,20}$ ">
+                  </div>
+                  <div class="form-row">
+                     <label for="gender"><b>Gender:</b></label>
+                          <select>
+                             <option><b>Male</b></option>
+                             <option><b>Female</b></option>
+                             <option><b>Other</b></option>
+                          </select>
+                  </div>
+                  <div class="form-row">
+                    <label for="email"><b>Email:</b></label>
+                     <input type="text" name="Email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                  </div>
+                  <div class="form-row">
+                    <label for="favColor"><b>Mobile_No:</b></label>
+                     <input type="text" name="phone" pattern="[789][0-9]{9}">
+                  </div>
+                  <div class="form-row">
+                    <label for="password"><b>Password:</b></label>
+                     <input type="password" name="pass" placeholder="Password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"> 
+                  </div>
+                  <div class="form-row">
+                    <label for="favColor"><b>Confirm:</b></label>
+                     <input type="password" name="confirm" placeholder="Confirm Password" onblur="matchPassword(this)" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                  </div>
+                     <input type="submit" id="submit" value="submit">
+                        <a href="login.html" style="text-align: center;"><h4><b>I Have An Account</b></h4></a>
+                </center>
+              </fieldset>
+            </form>
+    </div>
+</div>
+
+</body>
+</body>
+</html>

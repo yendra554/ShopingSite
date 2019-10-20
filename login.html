@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <script>
+        function validateForm() {
+
+            var x = document.forms["myForm"]["Email"].value;
+                    if (x == "") {
+                    
+                            alert("Please Enter Your Email");
+                     return false;
+                    }
+            var a = document.forms["myForm"]["pass"].value;
+                    if (a == "") {
+                    
+                            alert("Please Enter Your Password");
+                     return false;
+                    }
+                }
+        function welcome(){
+                alert(" Welcome to miniShop online shoping site please login.");
+                }
+    </script>
+     
+</head>
+<body onload="welcome()">
+   <br>
+   <center><img src="mini.png" height="150" width="150"></center>  
+<center>
+  <span>
+    <h1>
+      <b><i><u>LOGIN</u></i></b>
+    </h1>
+  </span>
+</center>
+<form name="myForm" method="post" onsubmit="return validateForm()">
+	<fieldset>
+    <center>
+
+     <div class="container" style="text-align: center">
+     <br>
+	     <div class="form-row">
+              <label for="email"><b>Email:</b></label>
+                 <input type="text" name="Email" placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+       </div>  
+     <br>
+       <div class="form-row">
+              <label for="password"><b>Password:<b></label>
+                 <input id="input2" type="password" name="pass" placeholder="Password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">  
+       </div>
+                <a href="signup.html"><b><h4>I don't have An Account</h4></b></a>
+                 <input type="submit" id="submit" name="submit">
+     </div>
+    </center>
+	</fieldset>
+</form>
+</body>
+</html>
