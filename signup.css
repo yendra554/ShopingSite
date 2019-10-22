@@ -28,9 +28,6 @@ body {
 	display: flex;
 	color: red;
 }
-.container{   
-	background-color: #E1F5FE;
-}
 .form-row label{
     padding-right: 10px;
     flex: 1;
